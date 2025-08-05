@@ -71,12 +71,12 @@ function TimelineItem({ year, title, description }) {
 
 function Timeline() {
   const timelineItems = [
-    { year: '2020', title: 'Started Programming', description: 'Began programming in C++ and Python.' },
-    { year: '2021', title: 'Learning more programming', description: 'Started learning JS, Html, css and PHP.' },
-    { year: '2022', title: 'I got in to SCI high school', description: 'Started learning in SCI one of the best Polish IT high schools.' },
-    { year: '2023', title: 'Finished first practices', description: 'Go two certificates for it. Graduated first grade with honors.' },
+    { year: '2025', title: 'Exams for future job and Erasmus', description: 'Passed first major exam easily, managed to secure a spot in Erasmus trip to Valencia where we learned React and Express. Graduated 3 grade with honors'},
     { year: '2024', title: 'Learning some hardware stuff', description: 'Graduating 2 grade with honors.' },
-    { year: '2025', title: 'Exams for future job and Erasmus', description: 'Passed first major exam easily, managed to secure a spot in Erasmus trip to Valencia where we learned React and Express. Graduated 3 grade with honors'}
+    { year: '2023', title: 'Finished first practices', description: 'Go two certificates for it. Graduated first grade with honors.' },
+    { year: '2022', title: 'I got in to SCI high school', description: 'Started learning in SCI one of the best Polish IT high schools.' },
+    { year: '2021', title: 'Learning more programming', description: 'Started learning JS, Html, css and PHP.' },    
+    { year: '2020', title: 'Started Programming', description: 'Began programming in C++ and Python.' }
   ];
 
   return (
