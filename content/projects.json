@@ -1,0 +1,15 @@
+  {"projects":[
+  {
+    "title": "Portfolio Website",
+    "description": "A personal portfolio built with React and TailwindCSS. Yes this site, i count it as a project.",
+    "tech": ["React", "TailwindCSS", "Vite"]
+  },
+  {
+    "title": "Gravebound",  
+    "description": "Gravebound is a 3D game made by 3 people including me in Godot for the school competition SCI++, we didn't win, but we got a distinction from 'Frabryka Gier' a company which makes games.",
+    "tech": ["Godot 4.1", "Blender", "Trenchbroom"],
+    "link": "https://exonege.itch.io/gravebound",
+    "image": "/Gravebound.png"  
+  }
+]
+}
