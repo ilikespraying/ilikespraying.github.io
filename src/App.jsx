@@ -59,6 +59,72 @@ function Navbar({ currentPage, setCurrentPage, darkMode, toggleDarkMode }) {
   );
 }
 
+function TimelineItem({ year, title, description }) {
+  return (
+    <div className="relative pl-8 sm:pl-16 mb-10">
+      <div className="absolute left-2 top-1.5 w-4 h-4 bg-blue-500 rounded-full border-4 border-white dark:border-gray-900"></div>
+      <h3 className="text-xl font-bold mb-1">{year} - {title}</h3>
+      <p className="text-lg text-gray-400">{description}</p>
+    </div>
+  );
+}
+
+function Timeline() {
+  const timelineItems = [
+    { year: '2020', title: 'Started Programming', description: 'Began programming in C++ and Python.' },
+    { year: '2021', title: 'Learning more programming', description: 'Started learning JS, Html, css and PHP.' },
+    { year: '2022', title: 'I got in to SCI high school', description: 'Started learning in SCI one of the best Polish IT high schools.' },
+    { year: '2023', title: 'Finished first practices', description: 'Go two certificates for it. Graduated first grade with honors.' },
+    { year: '2024', title: 'Learning some hardware stuff', description: 'Graduating 2 grade with honors.' },
+    { year: '2025', title: 'Exams for future job and Erasmus', description: 'Passed first major exam easily, managed to secure a spot in Erasmus trip to Valencia where we learned React and Express. Graduated 3 grade with honors'}
+  ];
+
+  return (
+    <div className="mt-12">
+      <h2 className="text-4xl font-bold mb-8 text-center">Timeline</h2>
+      <div className="border-l-4 border-blue-500 ml-4 text-left">
+        {timelineItems.map((item, index) => (
+          <TimelineItem key={index} {...item} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TechStack() {
+  const [showTech, setShowTech] = useState(false);
+  const techs = [
+    { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+    { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+    { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'TailwindCSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+    { name: 'C++', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+    { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  ];
+
+  return (
+    <div className="mt-12 text-center">
+      <button
+        onClick={() => setShowTech(!showTech)}
+        className="px-6 py-3 bg-blue-600 text-white text-lg rounded-2xl shadow-md hover:bg-blue-700 transition"
+      >
+        {showTech ? 'Hide Technologies' : 'Show Technologies I Know'}
+      </button>
+      {showTech && (
+        <div className="mt-8 flex flex-wrap justify-center gap-6">
+          {techs.map((tech, index) => (
+            <div key={index} className="flex flex-col items-center w-24">
+              <img src={tech.logo} alt={tech.name} className="h-16 mb-2" />
+              <p className="text-sm font-medium">{tech.name}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Portfolio() {
   const [currentPage, setCurrentPage] = useState("Projects");
   const [darkMode, setDarkMode] = useState(true);
@@ -85,6 +151,8 @@ export default function Portfolio() {
             <br /><br />
             I know HTML, CSS, JavaScript, C++, Python. I've worked with React, TailwindCSS, and Vite — like this portfolio!
           </p>
+          <Timeline />
+          <TechStack />
         </div>
       )}
 
@@ -110,7 +178,7 @@ export default function Portfolio() {
           </p>
           <p className={`${darkMode ? 'text-gray-300 text-2xl' : 'text-gray-700 text-2xl'}`}>
             Phone: +48 603 720 939
-          </p>
+          </p>     
         </div>
       )}
     </div>
